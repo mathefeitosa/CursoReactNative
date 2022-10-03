@@ -5,7 +5,11 @@ import { CATEGORIES } from "../data/dummy-data";
 function CategoriesScreen({ navigation }) {
   function renderCategoryItem(data) {
     function pressHandler() {
-      navigation.navigate("MealsOverview");
+      navigation.navigate("MealsOverview", {
+        categoryId: data.item.id,
+        title: data.item.title,
+        color: data.item.color,
+      });
     }
     return (
       <CategoryGridTile
